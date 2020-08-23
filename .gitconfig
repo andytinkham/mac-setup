@@ -1,0 +1,21 @@
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[user]
+	name = Andy Tinkham
+	email = andy@tinkham.org
+[core]
+	editor = atom --wait
+	hooksPath = ~/git-hooks
+	excludesfile = /Users/atinkham/.gitignore
+[rerere]
+	enabled = true
+[alias]
+	l1 = log --all --graph --abbrev-commit --decorate --date=relative \
+--format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) \
+%C(bold yellow)%d%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset) \
+%<(1,trunc)%b'
+[pull]
+	rebase = true
